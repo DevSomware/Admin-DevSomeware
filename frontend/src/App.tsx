@@ -1,15 +1,15 @@
 import React from 'react'
-import { Button } from './components/ui/button'
+
+import { Routes, Route } from 'react-router-dom';
+import Home from './utils/home/Home';
+import About from './utils/home/About';
 const App = () => {
   return (
     <>
-    <div className='bg-blue-600 text-white text-2xl'>
-      hello how are you
-      
-    </div>
-    <Button>Click me</Button>
-    <Button variant='secondary'>Click me</Button>
-    <Button  variant={"outline"}>Click me</Button>
+   <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
     </>
   )
 }
