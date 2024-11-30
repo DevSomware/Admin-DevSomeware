@@ -18,7 +18,7 @@ if(user.token!=data.token){
 }
 //if everything is fine then update the password
 let encryptedPassword = CryptoJS.AES.encrypt(data.password,process.env.AES_SECRET||"").toString();
-await Admin.findByIdAndUpdate(user._id,{password:encryptedPassword});
+await Admin.findByIdAndUpdate(user._id,{password:encryptedPassword,isforgot:false});
 return res.status(200).json({message:"Password reset successfully",success:true});
 }
 catch(err){

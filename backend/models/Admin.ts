@@ -13,7 +13,7 @@ const AdminSchema =  new mongoose.Schema({
     img:{type:String},
     email:{type:String,required:true},
     role:{type:String,default:"admin"},
-    isforgot:{type:Boolean,default:false},
+    isforgot:{type:Boolean,default:true},
     linkedin:{type:String},
     github:{type:String},
     token:{type:String}

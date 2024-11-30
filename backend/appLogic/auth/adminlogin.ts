@@ -18,7 +18,7 @@ if(bytes==data.password){
     const token = jwt.sign({id:user._id,role:user.role,email:user.email,name:user.name},process.env.JWT_SECRET||"");
     //update token in database
     await Admin.findByIdAndUpdate(user._id,{token:token});
-    return res.status(200).json({message:"Admin logged in successfully",success:true,token:token});
+    return res.status(200).json({message:"Admin logged in successfully",success:true,token:token,role:user.role,forgot:user.isforgot});
 }
 //if password is incorrect
 return res.status(400).json({message:"Password is incorrect",success:false});
